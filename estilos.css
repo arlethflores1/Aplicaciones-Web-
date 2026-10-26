@@ -537,11 +537,14 @@ footer p {
     padding: 60px 10%;
 }
 
-.pagina-contacto h1 {
+
+.pagina-contacto h1,
+.pagina-contacto h2 {
     color: #ddb568;
     text-align: center;
     margin-bottom: 20px;
 }
+
 
 .pagina-contacto p {
     color: #dddddd;
@@ -686,4 +689,16 @@ section {
 .facebook-link:hover {
     background-color: #ddb568;
     color: #111111;
+}
+
+#ubicacion {
+    background-color: #111;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#ubicacion h2 {
+    color: #ddb568;
+    margin-bottom: 20px;
 }
