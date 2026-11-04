@@ -1,0 +1,282 @@
+
+/* ==========================
+   CONFIGURACION GENERAL
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F4E1D2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* PERSONAJE */
+
+.pooh {
+    position: relative;
+    width: 340px;
+    height: 600px;
+}
+
+/* ==========================
+   OREJAS
+========================== */
+
+.oreja {
+    position: absolute;
+    width: 68px;
+    height: 75px;
+    background: #F5B82E;
+    border-radius: 50%;
+    top: 25px;
+    z-index: 1;
+}
+
+.oreja.izquierda {
+    left: 55px;
+}
+
+.oreja.derecha {
+    right: 55px;
+}
+
+/* ==========================
+   CABEZA
+========================== */
+
+.cabeza {
+    position: absolute;
+    width: 210px;
+    height: 190px;
+    background: #F5B82E;
+    border-radius: 50%;
+    top: 45px;
+    left: 65px;
+    z-index: 2;
+}
+
+/* ==========================
+   OJOS
+========================== */
+
+.ojo {
+    position: absolute;
+    width: 12px;
+    height: 17px;
+    background: black;
+    border-radius: 50%;
+    top: 115px;
+    z-index: 4;
+}
+
+.ojo.izquierdo {
+    left: 137px;
+}
+
+.ojo.derecho {
+    left: 213px;
+}
+
+/* ==========================
+   HOCICO
+========================== */
+
+.hocico {
+    position: absolute;
+    width: 110px;
+    height: 67px;
+    background: #F8D58A;
+    border-radius: 50%;
+    top: 180px;
+    left: 115px;
+    z-index: 3;
+}
+
+/* NARIZ */
+
+.nariz {
+    position: absolute;
+    width: 27px;
+    height: 19px;
+    background: black;
+    border-radius: 50%;
+    top: 195px;
+    left: 157px;
+    z-index: 4;
+}
+
+/* BOCA */
+
+.boca {
+    position: absolute;
+    width: 48px;
+    height: 20px;
+    border-bottom: 3px solid #5B321B;
+    border-radius: 50%;
+    top: 215px;
+    left: 146px;
+    z-index: 4;
+}
+
+/* ==========================
+   PANCITA
+========================== */
+
+.panza {
+    position: absolute;
+    width: 195px;
+    height: 155px;
+    background-color: #F5B82E;
+    border-radius: 50%;
+    top: 315px;
+    left: 72px;
+    z-index: 1;
+}
+
+/* ==========================
+   PIERNAS
+========================== */
+
+.pierna {
+    position: absolute;
+    width: 68px;
+    height: 100px;
+    background: #F5B82E;
+    border-radius: 45%;
+    top: 420px;
+    z-index: 2;
+}
+
+.pierna.izquierda {
+    left: 90px;
+}
+
+.pierna.derecha {
+    right: 90px;
+}
+
+/* ==========================
+   PIES
+========================== */
+
+.pie {
+    position: absolute;
+    width: 85px;
+    height: 42px;
+    background: #F5B82E;
+    border-radius: 50%;
+    top: 505px;
+    z-index: 3;
+}
+
+.pie.izquierdo {
+    left: 65px;
+}
+
+.pie.derecho {
+    right: 65px;
+}
+
+/* ==========================
+   BRAZOS
+========================== */
+
+.brazo {
+    position: absolute;
+    width: 55px;
+    height: 120px;
+    background-color: #F5B82E;
+    border-radius: 50%;
+    top: 245px;
+    z-index: 2;
+    transform-origin: top center;
+}
+
+.brazo.izquierdo {
+    left: 48px;
+    transform: rotate(8deg);
+}
+
+.brazo.derecho {
+    right: 48px;
+    animation: saludar 1s infinite ease-in-out;
+}
+
+.mano {
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    background-color: #F5B82E;
+    border-radius: 50%;
+    bottom: -3px;
+    left: 7px;
+}
+
+/* ==========================
+   ANIMACION DEL SALUDO
+========================== */
+
+@keyframes saludar {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(-40deg);
+    }
+}
+
+/* ==========================
+   CAMISA ROJA REDONDEADA
+========================== */
+
+.camisa {
+    position: absolute;
+    width: 180px;
+    height: 150px;
+    left: 80px;
+    top: 230px;
+    background-color: #D62828;
+    border-radius: 48% 48% 38% 38% / 25% 25% 22% 22%;
+    z-index: 3;
+}
+
+/* CUELLO DE LA CAMISA */
+
+.camisa::before {
+    content: "";
+    position: absolute;
+    width: 65px;
+    height: 18px;
+    border-bottom: 4px solid #A91F24;
+    border-radius: 50%;
+    top: 0;
+    left: 55px;
+}
+
+/* ==========================
+   ACCESIBILIDAD
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .brazo.derecho {
+        animation: none;
+    }
+}
+
+/* SUBIR UN POQUITO LA CABEZA */
+.cabeza,
+.oreja,
+.ojo,
+.hocico,
+.nariz,
+.boca {
+    transform: translateY(-8px);
+}
